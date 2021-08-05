@@ -1,0 +1,35 @@
+{
+  "name": "bitz-n-pizzez",
+  "version": "1.0.0",
+  "description": "basically a notes app",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./app.js",
+    "start": "node ./bin/www",
+    "watch": "nodemon --ignore public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardstuff/bitz-n-pizzez.git"
+  },
+  "keywords": [
+    "notes"
+  ],
+  "author": "solienbernard989@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bernardstuff/bitz-n-pizzez/issues"
+  },
+  "homepage": "https://github.com/bernardstuff/bitz-n-pizzez#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "javascript-time-ago": "^2.3.8",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3"
+  }
+}

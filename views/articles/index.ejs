@@ -1,0 +1,54 @@
+<%- include('../partials/_header.ejs') %>
+
+  <div class="container mt-4">
+    
+    <% if (articles.length > 0){ %>
+    <h5 class="display-5 fw-bold">Some things, about something...</h5>
+    <p class="small">mostly coding...</p>
+    
+    <%- include('../partials/_search-box')%>
+
+    <div class="container">
+
+      <div class="row justify-content-center mt-5">
+        <% articles.forEach(article => {%>
+          <div class="col my-3 align-self-center justify-content-center">
+            <div class="card shadow-sm text-white bg-dark mb-3 m-auto border border-secondary" style="width: 23rem;">
+              <img id="article-card-image" src="<%= article.img?article.img:'/img/default-article.jpg' %>" class="card-img-top" alt="<%= article.title%>">
+              <div class="card-body">
+                <h4 class="card-title"><%= article.title%></h4>
+                <div class="card-subtitle text-muted mb-2">
+                  <p class="text-right">
+                    <%= article.createdAt.toLocaleDateString()%>
+                  </p>
+                </div>
+                <hr>
+                <p class="card-text text-wrap"><%= article.description%></p>
+                <div class="text-center">
+                  <a href="/articles/#" class="stretched-link text-decoration-none text-primary"><i class="bi bi-book-fill"></i> Read Article</a>
+                </div>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated <%= article.createdAt.toLocaleDateString()%></small>
+              </div>
+            </div>
+          </div>
+        <%})}else {%>
+          <div class="row justify-content-center mt-5">
+            <div class="col align-self-center">
+              <div class="p-5 mb-4 bg-dark rounded-3">
+                <div class="container-fluid py-5">
+                  <h1 class="display-5 fw-bold">Hey man, Isn't there anything that interests you? </h1>
+                  <p class="col-md-8 fs-4">This is the place to write about anything.</p>
+                  <a href="/articles/new" class="btn btn-primary btn-lg">Start here!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%}%>
+      </div>
+    </div>
+  </div>
+
+<%- include('../partials/_footer') %>
+    
